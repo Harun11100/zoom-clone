@@ -1,31 +1,26 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import MobileNav from './MobileNav'
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import MobileNav from './MobileNav';
 
 const Navbar = () => {
   return (
-     <nav className='flex-between fixed z-50 w-full bg-dark-1 px-6 py-4 lg:px-10'>
-      <Link
-      href='/' className='flex items-center gap-1'
-      >
-      <Image 
-      src='/icons/logo.svg'
-      width={32}
-      height={32}
-      alt='Yoom logo' 
-      className='max-sm:size-10'
-      />
-      <p className='text-[26px] font-extrabold text-white max-sm:hidden'>Zoom</p>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-dark-1 px-6 py-4 lg:px-10">
+      <Link href="/" className="flex items-center gap-1">
+        <Image 
+          src="/icons/logo.svg" 
+          width={32} 
+          height={32} 
+          alt="Yoom logo" 
+          className="max-sm:w-10 max-sm:h-10" 
+        />
+        <p className="text-[26px] font-extrabold text-white hidden max-sm:inline">Joom</p>
       </Link>
-      <div className='flex-between gap -5'>
-
-          <MobileNav/>
-
+      <div className="flex items-center gap-5">
+        <MobileNav />
       </div>
-
-     </nav>
-  )
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

@@ -1,20 +1,23 @@
-
+'use client'
 import React from 'react'
 import {
       Sheet,
+      SheetClose,
       SheetContent,
-      SheetDescription,
-      SheetHeader,
-      SheetTitle,
       SheetTrigger,
     } from "@/components/ui/sheet"
 import Image from 'next/image'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { sidebarLinks } from '@/constants'
+import { usePathname } from 'next/navigation'
     
 const MobileNav = () => {
+      const pathname =usePathname();
   return (
    <section className='w-full max-w-[264px]'>
        <Sheet>
-      <SheetTrigger>
+      <SheetTrigger asChild>
             <Image
             src='/icons/hamburger.svg'
             width={36}
@@ -24,15 +27,47 @@ const MobileNav = () => {
 
 
             />
-            </SheetTrigger>
-      <SheetContent >
-      <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
-            <SheetDescription>
-            This action cannot be undone. This will permanently delete your account
-            and remove your data from our servers.
-            </SheetDescription>
-      </SheetHeader>
+                        </SheetTrigger>
+                  <SheetContent side='left'  className='border-none bg-dark-1'>
+                  <Link
+                  href='/' className='flex items-center gap-1'
+                  >
+                  <Image 
+                  src='/icons/logo.svg'
+                  width={32}
+                  height={32}
+                  alt='Yoom logo' 
+                  className='max-sm:size-10'
+                  />
+                  <p className='text-[26px] font-extrabold text-white'>Zoom</p>
+                  </Link>
+                  <div className=' flex flex-col justify-between h-[calc(100vh-72px) overflow-y-auto ]'>
+                        <SheetClose>
+                              <section className='flex flex-col pt-16 gap-6 h-full text-white'>
+                              {sidebarLinks.map((link)=>{
+                              const isActive= pathname === link.route;
+                              return (
+                                  <SheetClose asChild key={link.route}>
+                                    <Link href={link.route} 
+                                    key={link.label}
+                                    className={cn( 'flex gap-4 items-center p-4 rounded-lg w-full  max-w-60' ,{'bg-blue-1':isActive})} >
+                                          <Image 
+                                                      src={link.imgUrl}
+                                    alt={link.label}
+                                    width={22}  
+                                    height={22}/>
+                                    <p className='font-semibold  '>
+                                    {link.label}
+                                    </p>
+                                    
+                                    </Link>
+                                    </SheetClose>       
+                  ) 
+                  })}
+                              
+                              </section>
+            </SheetClose>
+      </div>
       </SheetContent>
       </Sheet>
 
