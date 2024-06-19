@@ -1,11 +1,10 @@
-import React, { Children, ReactNode } from 'react'
 
-const RootLayout = ({children}:{children:ReactNode}) => {
+import React, { ReactNode } from 'react'
+
+const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
    <main>
-   
-      {children}
-     
+           {children}
    </main>
   )
 }
