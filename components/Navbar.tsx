@@ -6,12 +6,12 @@ import { SignedIn, UserButton } from '@clerk/nextjs';
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full bg-dark-1 px-6 py-4 lg:px-10">
+    <nav className="flex-between fixed z-50 w-full bg-dark-1 px-6 py-4 lg:px-10">
       <Link href="/" className="flex items-center gap-1">
         <Image 
           src="/icons/logo.svg" 
-          width={32} 
-          height={32} 
+          width={45} 
+          height={45} 
           alt="Yoom logo" 
           className="max-sm:w-10 max-sm:h-10" 
         />
