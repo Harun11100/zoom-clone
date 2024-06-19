@@ -25,7 +25,20 @@ const config = {
         },
         blue:{
           1:'#0E7890'
-        }
+        },
+        red:{
+          1:'#ff5643'
+        },
+        pink:{
+          1:'#ff23ef'
+        },
+        yellow:{
+          1:'#3ffa'
+        },
+        orange:{
+          1:'#ff9b41'
+        },
+
       },
 
       backgroundImage:{
