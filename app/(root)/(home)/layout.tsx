@@ -1,7 +1,15 @@
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
+import { Metadata } from 'next';
 import React, { ReactNode } from 'react'
 
+export const metadata: Metadata = {
+  title: "JOOM",
+  description: "Video calling application",
+  icons:{
+    icon:'/icons/logo/svg'
+  }
+};
 const HomeLayout = ({children}:Readonly<{children:ReactNode}>) => {
   return (
    <main className='relative'>
