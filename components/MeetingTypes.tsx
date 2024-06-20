@@ -9,9 +9,8 @@ import MeetingModal from './MeetingModal'
 const MeetingTypes = () => {
       const router=useRouter();
       const [meetingState,setMeetingState]=useState<'isScheduleMeeting'|'isJoiningMeeting'|'isInstantMeeting'|undefined>();
-      const createMeeting=()=>{
+      const createMeeting=()=>{ }
 
-      }
   return (
    <section className='grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-4'>
      <Homecard 
@@ -19,13 +18,13 @@ const MeetingTypes = () => {
      bg='bg-red-1' 
      title='New Meetings'
      des='Start an instant meeting'
-     handleClick={()=>{setMeetingState('isInstantMeeting')}}/>
+     handleClick={()=>setMeetingState('isInstantMeeting')}/>
 
      <Homecard img='/icons/schedule.svg' 
      bg='bg-pink-1' 
      title='Schedule Meetings'
      des='Plan your meeting'
-     handleClick={()=>{setMeetingState('isScheduleMeeting')}}/>
+     handleClick={()=>setMeetingState('isScheduleMeeting')}/>
 
      <Homecard img='/icons/recordings.svg' 
      bg='bg-yellow-1' 
@@ -37,7 +36,9 @@ const MeetingTypes = () => {
      bg='bg-orange-1' 
      title='Join Meetings'
      des='via invitation link'
-     handleClick={()=>{setMeetingState('isJoiningMeeting')}}/>
+     handleClick={()=>setMeetingState('isJoiningMeeting')}/>
+     
+     
      <MeetingModal
       isOpen={meetingState ==='isInstantMeeting'}
       onClose={()=>setMeetingState(undefined)}      
@@ -45,7 +46,7 @@ const MeetingTypes = () => {
       className='text-center'
       buttonText='Start Meeting'
       handleClick={createMeeting}
-      image=''
+     
      />
    </section>
   )
