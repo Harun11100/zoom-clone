@@ -11,6 +11,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { useToast } from './ui/use-toast'
 import { Textarea } from './ui/textarea'
 import ReactDatePicker from  'react-datepicker'
+import { Input } from './ui/input'
 
 const MeetingTypes = () => {
       const router=useRouter();
@@ -164,6 +165,24 @@ const MeetingTypes = () => {
       handleClick={createMeeting}
      
      />
+     <MeetingModal
+      isOpen={meetingState ==='isJoiningMeeting'}
+      onClose={()=>setMeetingState(undefined)}      
+      title='Type the link here'
+      className='text-center'
+      buttonText='Join  Meeting'
+      handleClick={()=>{
+        router.push(value.link)
+      }}
+     >
+      <Input className='bg-dark-2 border-none focus-visible:ring-0 
+      focus-visible:ring-offset-0'
+      placeholder='Meeting Link'
+      onChange={(e)=>{setValues({...value,link:e.target.value})}}
+       />
+     </MeetingModal>
+
+
    </section>
   )
 }
