@@ -36,10 +36,10 @@ const MobileNav = () => {
                   src='/icons/logo.svg'
                   width={32}
                   height={32}
-                  alt='Yoom logo' 
+                  alt='zoom logo' 
                   className='max-sm:size-10'
                   />
-                  <p className='text-[26px] font-extrabold text-white'>Zoom</p>
+                  <p className='text-[26px] font-extrabold text-white'>Zoom-clone</p>
                   </Link>
                   <div className=' flex flex-col justify-between h-[calc(100vh-72px) overflow-y-auto ]'>
                         <SheetClose>

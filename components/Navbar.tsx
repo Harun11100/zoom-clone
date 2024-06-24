@@ -15,7 +15,7 @@ const Navbar = () => {
           alt="Yoom logo" 
           className="max-sm:w-10 max-sm:h-10" 
         />
-        <p className="text-[26px] font-extrabold text-white hidden max-sm:inline">Joom</p>
+        <p className="text-[26px] font-extrabold text-white hidden max-sm:inline">zoom-clone</p>
       </Link>
       <div className="flex items-center gap-5">
 
